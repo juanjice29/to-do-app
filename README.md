@@ -17,7 +17,7 @@ Antes de comenzar, debe de tener instalado el siguiente software en tu sistema:
 
 ## Instalación y Ejecución
 
-Sigue estos pasos para clonar, instalar las dependencias y ejecutar la aplicación completa en tu entorno local.Las instrucciones de como usar la aplicacion funcionalmente estan en la wiki.
+Sigue estos pasos para clonar, instalar las dependencias y ejecutar la aplicación completa en tu entorno local.Las instrucciones de como usar la aplicacion funcionalmente estan en la wiki. El frontEnd de la aplicacion sale por defecto en el puerto 5173, y el backend sale por defecto en el puerto 8080. 
 
 ```bash
 git clone https://github.com/juanjice29/to-do-app.git
@@ -44,6 +44,9 @@ npm run dev
 # Si desea ejecutar las pruebas del backend desde la carpeta /to-do-backend
 mvn test
 ```
+---
+## Api Documentacion
+
 ---
 ## Características Principales
 
@@ -73,4 +76,9 @@ mvn test
 * **Context API** (para el manejo de estado global)
 * **Axios** (para las peticiones a la API)
 * **@hello-pangea/dnd** (para la funcionalidad de arrastrar y soltar)
+
+### Futuras implementaciones
+* ** Dockerizar todo el proyecto para que sea facilmente replicable como una imagen.
+* ** Implementar la funcionalidad de modo oscuro y claro con tailwind
+* ** Crear un plan de pruebas mas elaborado(actualmente solo hay pruebas de backend) , monkey ripets, pruebas e2e,prueba ui/ux.
 
