@@ -1,17 +1,40 @@
 import axios from 'axios';
-import { Task } from '../types'; // Nota la ruta relativa
+import { Task, TaskCreateData, TaskUpdateData, TaskOrderData } from '../types/task';
 
-const apiClient = axios.create({
-  // Se accede a las variables con import.meta.env en lugar de process.env
-  baseURL: "http://localhost:8080/api/v1", 
-  headers: {
-    'Content-Type': 'application/json',
-  },
+const API = axios.create({
+  baseURL: 'http://localhost:8080/api/v1/task',
 });
 
-export const getTasks = () => apiClient.get<Task[]>('/task');
-export const createTask = (taskData: { title: string; description: string }) => apiClient.post<Task>('/task', taskData);
-export const updateTask = (id: number, taskData: Partial<Task>) => apiClient.patch<Task>(`/task/${id}`, taskData);
-export const deleteTask = (id: number) => apiClient.delete(`/task/${id}`);
-export const updateTaskOrder = (id: number, orderBefore: number | null, orderAfter: number | null) => 
-  apiClient.patch(`/task/${id}/order`, { orderBefore, orderAfter });
+// TYPE: Añadimos tipos a los parámetros y al valor de retorno (Promise<Task[]>)
+export const getTasks = async (completed: boolean | null = null): Promise<Task[]> => {
+  const params: { completed?: boolean } = {};
+  if (completed !== null) {
+    params.completed = completed;
+  }
+ 
+  const response = await API.get<Task[]>('/', { params });
+  return response.data;
+};
+
+export const createTask = async (taskData: TaskCreateData): Promise<Task> => {
+  const response = await API.post<Task>('/', taskData);
+  return response.data;
+};
+
+export const updateTask = async (taskId: number, updateData: TaskUpdateData): Promise<Task> => {
+  const response = await API.patch<Task>(`/${taskId}`, updateData);
+  return response.data;
+};
+
+export const deleteTask = async (taskId: number): Promise<void> => {
+  await API.delete(`/${taskId}`);
+};
+
+export const updateTaskOrder = async (taskId: number, orderData: TaskOrderData): Promise<void> => {
+  await API.patch(`/${taskId}/order`, orderData);
+};
+
+export const getTaskById = async (taskId: number): Promise<Task> => {
+  const response = await API.get<Task>(`/${taskId}`);
+  return response.data;
+};
