@@ -46,7 +46,7 @@ mvn test
 ```
 ---
 ## Api Documentacion
-
+La api Se encuentra documentada en los archivos Test.postman_enviroment (variable de entorno url) y Task.postman_collection (todos las acciones del crud sobre una tarea), puede importar estas colecciones en un postman si desea probar la APIrest.
 ---
 ## Características Principales
 
@@ -78,7 +78,7 @@ mvn test
 * **@hello-pangea/dnd** (para la funcionalidad de arrastrar y soltar)
 
 ### Futuras implementaciones
-* ** Dockerizar todo el proyecto para que sea facilmente replicable como una imagen.
-* ** Implementar la funcionalidad de modo oscuro y claro con tailwind
-* ** Crear un plan de pruebas mas elaborado(actualmente solo hay pruebas de backend) , monkey ripets, pruebas e2e,prueba ui/ux.
+* **Dockerizar todo el proyecto para que sea facilmente replicable como una imagen.
+* **Implementar la funcionalidad de modo oscuro y claro con tailwind
+* **Crear un plan de pruebas mas elaborado(actualmente solo hay pruebas de backend) , monkey ripets, pruebas e2e,prueba ui/ux.
 
