@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "7659cc92-61d9-4deb-939f-17a52916bcb1",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44458801"
+	},
+	"item": [
+		{
+			"name": "Create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"mi tarea 5\",\r\n    \"description\":\"mi description\",\r\n    \"completed\":true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/task/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Ordered Task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"mi tarea\",\r\n    \"description\":\"mi description\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/task/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order a task",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderBefore\":-7.0    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/task/6/order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"6",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"mi tarea\",\r\n    \"description\":\"mi description\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/task/8",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/task/6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/task/7",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"task",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
